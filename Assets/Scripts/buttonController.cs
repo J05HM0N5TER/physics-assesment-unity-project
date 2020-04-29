@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,11 @@ public class buttonController : MonoBehaviour
     public Ragdoll ragdoll = null;
 
     private void OnTriggerEnter(Collider other)
+    {
+        Activate();
+    }
+
+    public void Activate()
     {
         ragdoll.RagdollOn = true;
         platform.isKinematic = false;
