@@ -8,6 +8,8 @@ public class buttonController : MonoBehaviour
 {
     public Rigidbody platform = null;
     public Ragdoll ragdoll = null;
+    public GameObject boxPrefab = null;
+    public Transform boxSpawnLocation = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +18,7 @@ public class buttonController : MonoBehaviour
 
     public void Activate()
     {
+        Instantiate(boxPrefab, boxSpawnLocation, false);
         ragdoll.RagdollOn = true;
         platform.isKinematic = false;
     }
